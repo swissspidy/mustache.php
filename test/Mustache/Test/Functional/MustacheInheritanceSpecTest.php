@@ -35,6 +35,8 @@ class Mustache_Test_Functional_MustacheInheritanceSpecTest extends Mustache_Test
     /**
      * For some reason data providers can't mark tests skipped, so this test exists
      * simply to provide a 'skipped' test if the `spec` submodule isn't initialized.
+     *
+     * @doesNotPerformAssertions
      */
     public function testSpecInitialized()
     {
