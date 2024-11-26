@@ -61,7 +61,7 @@ class Mustache_Test_Logger_StreamLoggerTest extends Yoast\PHPUnitPolyfills\TestC
         $result = fread($stream, 1024);
 
         if ($shouldLog) {
-            $this->assertContains('logged', $result);
+            $this->assertStringContainsString('logged', $result);
         } else {
             $this->assertEmpty($result);
         }

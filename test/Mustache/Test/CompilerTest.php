@@ -23,7 +23,7 @@ class Mustache_Test_CompilerTest extends Yoast\PHPUnitPolyfills\TestCases\TestCa
 
         $compiled = $compiler->compile($source, $tree, $name, $customEscaper, $charset, false, $entityFlags);
         foreach ($expected as $contains) {
-            $this->assertContains($contains, $compiled);
+            $this->assertStringContainsString($contains, $compiled);
         }
     }
 
