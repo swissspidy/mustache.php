@@ -132,11 +132,9 @@ class Mustache_Test_CompilerTest extends Yoast\PHPUnitPolyfills\TestCases\TestCa
         );
     }
 
-    /**
-     * @expectedException Mustache_Exception_SyntaxException
-     */
     public function testCompilerThrowsSyntaxException()
     {
+	    $this->expectException(Mustache_Exception_SyntaxException::class);
         $compiler = new Mustache_Compiler();
         $compiler->compile('', array(array(Mustache_Tokenizer::TYPE => 'invalid')), 'SomeClass');
     }

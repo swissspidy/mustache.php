@@ -158,22 +158,20 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
         $this->assertNotSame($mustache->getCache(), $mustache->getProtectedLambdaCache());
     }
 
-    /**
-     * @expectedException Mustache_Exception_InvalidArgumentException
-     */
     public function testEmptyTemplatePrefixThrowsException()
     {
+	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         new Mustache_Engine(array(
             'template_class_prefix' => '',
         ));
     }
 
     /**
-     * @expectedException Mustache_Exception_InvalidArgumentException
      * @dataProvider getBadEscapers
      */
     public function testNonCallableEscapeThrowsException($escape)
     {
+	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         new Mustache_Engine(array('escape' => $escape));
     }
 
@@ -185,11 +183,9 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
         );
     }
 
-    /**
-     * @expectedException Mustache_Exception_RuntimeException
-     */
     public function testImmutablePartialsLoadersThrowException()
     {
+	    $this->expectException(Mustache_Exception_RuntimeException::class);
         $mustache = new Mustache_Engine(array(
             'partials_loader' => new Mustache_Loader_StringLoader(),
         ));
@@ -250,20 +246,16 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
         return '__' . $text . '__';
     }
 
-    /**
-     * @expectedException Mustache_Exception_InvalidArgumentException
-     */
     public function testSetHelpersThrowsExceptions()
     {
+	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         $mustache = new Mustache_Engine();
         $mustache->setHelpers('monkeymonkeymonkey');
     }
 
-    /**
-     * @expectedException Mustache_Exception_InvalidArgumentException
-     */
     public function testSetLoggerThrowsExceptions()
     {
+	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         $mustache = new Mustache_Engine();
         $mustache->setLogger(new StdClass());
     }
@@ -331,11 +323,9 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
         $this->assertStringContainsString('WARNING: Partial not found: "bar"', $log);
     }
 
-    /**
-     * @expectedException Mustache_Exception_InvalidArgumentException
-     */
     public function testUnknownPragmaThrowsException()
     {
+	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         new Mustache_Engine(array(
             'pragmas' => array('UNKNOWN'),
         ));

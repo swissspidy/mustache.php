@@ -96,7 +96,7 @@ class Mustache_Test_HelperCollectionTest extends Yoast\PHPUnitPolyfills\TestCase
     public function testHelperCollectionIsntAfraidToThrowExceptions($helpers = array(), $actions = array(), $exception = null)
     {
         if ($exception) {
-            $this->setExpectedException($exception);
+			$this->expectException($exception);
         }
 
         $helpers = new Mustache_HelperCollection($helpers);
