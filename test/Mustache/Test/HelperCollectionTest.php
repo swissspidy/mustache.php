@@ -92,6 +92,7 @@ class Mustache_Test_HelperCollectionTest extends Yoast\PHPUnitPolyfills\TestCase
 
     /**
      * @dataProvider getInvalidHelperArguments
+     * @doesNotPerformAssertions
      */
     public function testHelperCollectionIsntAfraidToThrowExceptions($helpers = array(), $actions = array(), $exception = null)
     {
