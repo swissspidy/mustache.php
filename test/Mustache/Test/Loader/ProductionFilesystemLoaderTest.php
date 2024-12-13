@@ -63,13 +63,13 @@ class Mustache_Test_Loader_ProductionFilesystemLoaderTest extends Yoast\PHPUnitP
 
     public function testMissingBaseDirThrowsException()
     {
-	    $this->expectException(Mustache_Exception_RuntimeException::class);
+        $this->expectException(Mustache_Exception_RuntimeException::class);
         new Mustache_Loader_ProductionFilesystemLoader(dirname(__FILE__) . '/not_a_directory');
     }
 
     public function testMissingTemplateThrowsException()
     {
-	    $this->expectException(Mustache_Exception_UnknownTemplateException::class);
+        $this->expectException(Mustache_Exception_UnknownTemplateException::class);
         $baseDir = realpath(dirname(__FILE__) . '/../../../fixtures/templates');
         $loader = new Mustache_Loader_ProductionFilesystemLoader($baseDir);
 

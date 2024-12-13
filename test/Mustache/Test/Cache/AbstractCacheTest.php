@@ -21,7 +21,7 @@ class Mustache_Test_Cache_AbstractCacheTest extends Yoast\PHPUnitPolyfills\TestC
 
     public function testSetLoggerThrowsExceptions()
     {
-	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
+        $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         $cache  = new CacheStub();
         $logger = new StdClass();
         $cache->setLogger($logger);

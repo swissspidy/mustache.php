@@ -132,7 +132,7 @@ EOS;
      */
     public function testThrowsExceptionForBrokenPipes($tpl, $data)
     {
-	    $this->expectException(Mustache_Exception_UnknownFilterException::class);
+        $this->expectException(Mustache_Exception_UnknownFilterException::class);
         $this->mustache->render($tpl, $data);
     }
 

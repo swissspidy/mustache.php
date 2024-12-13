@@ -524,8 +524,8 @@ class Mustache_Test_Functional_InheritanceTest extends Yoast\PHPUnitPolyfills\Te
      */
     public function testIllegalInheritanceExamples($partials, $data, $template)
     {
-	    $this->expectException(Mustache_Exception_SyntaxException::class);
-	    $this->expectExceptionMessage('Illegal content in < parent tag');
+        $this->expectException(Mustache_Exception_SyntaxException::class);
+        $this->expectExceptionMessage('Illegal content in < parent tag');
         $this->mustache->setPartials($partials);
         $tpl = $this->mustache->loadTemplate($template);
         $tpl->render($data);

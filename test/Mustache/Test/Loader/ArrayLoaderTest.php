@@ -43,7 +43,7 @@ class Mustache_Test_Loader_ArrayLoaderTest extends Yoast\PHPUnitPolyfills\TestCa
 
     public function testMissingTemplatesThrowExceptions()
     {
-	    $this->expectException(Mustache_Exception_UnknownTemplateException::class);
+        $this->expectException(Mustache_Exception_UnknownTemplateException::class);
         $loader = new Mustache_Loader_ArrayLoader();
         $loader->load('not_a_real_template');
     }

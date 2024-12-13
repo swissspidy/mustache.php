@@ -173,7 +173,7 @@ class Mustache_Test_ContextTest extends Yoast\PHPUnitPolyfills\TestCases\TestCas
 
     public function testAnchoredDotNotationThrowsExceptions()
     {
-	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
+        $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         $context = new Mustache_Context();
         $context->push(array('a' => 1));
         $context->findAnchoredDot('a');
@@ -262,7 +262,7 @@ class Mustache_Test_TestArrayAccess implements ArrayAccess
         }
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -272,19 +272,19 @@ class Mustache_Test_TestArrayAccess implements ArrayAccess
         }
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
@@ -302,13 +302,13 @@ class Mustache_Test_AllTheThings implements ArrayAccess
         return 'win';
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return true;
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         switch ($offset) {
@@ -325,13 +325,13 @@ class Mustache_Test_AllTheThings implements ArrayAccess
         }
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         // nada
     }
 
-	#[\ReturnTypeWillChange]
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         // nada

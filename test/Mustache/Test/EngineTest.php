@@ -160,7 +160,7 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
 
     public function testEmptyTemplatePrefixThrowsException()
     {
-	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
+        $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         new Mustache_Engine(array(
             'template_class_prefix' => '',
         ));
@@ -171,7 +171,7 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
      */
     public function testNonCallableEscapeThrowsException($escape)
     {
-	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
+        $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         new Mustache_Engine(array('escape' => $escape));
     }
 
@@ -185,7 +185,7 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
 
     public function testImmutablePartialsLoadersThrowException()
     {
-	    $this->expectException(Mustache_Exception_RuntimeException::class);
+        $this->expectException(Mustache_Exception_RuntimeException::class);
         $mustache = new Mustache_Engine(array(
             'partials_loader' => new Mustache_Loader_StringLoader(),
         ));
@@ -248,14 +248,14 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
 
     public function testSetHelpersThrowsExceptions()
     {
-	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
+        $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         $mustache = new Mustache_Engine();
         $mustache->setHelpers('monkeymonkeymonkey');
     }
 
     public function testSetLoggerThrowsExceptions()
     {
-	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
+        $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         $mustache = new Mustache_Engine();
         $mustache->setLogger(new StdClass());
     }
@@ -325,7 +325,7 @@ class Mustache_Test_EngineTest extends Mustache_Test_FunctionalTestCase
 
     public function testUnknownPragmaThrowsException()
     {
-	    $this->expectException(Mustache_Exception_InvalidArgumentException::class);
+        $this->expectException(Mustache_Exception_InvalidArgumentException::class);
         new Mustache_Engine(array(
             'pragmas' => array('UNKNOWN'),
         ));
